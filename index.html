@@ -65,7 +65,10 @@
         <div class="q-card" id="q-card" onclick="nextCard()">
           <span class="q-mode" id="q-mode"></span>
           <p class="q-text" id="q-text"></p>
-          <span class="q-hint">tap for next</span>
+          <div class="card-actions">
+            <button class="done-btn" onclick="markDone(event)">✓ done</button>
+            <span class="q-hint">tap card for next</span>
+          </div>
         </div>
       </div>
     </div>

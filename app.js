@@ -105,9 +105,9 @@ const QUESTIONS = {
   ]
 };
 
-let currentDeck = [];
-let currentIndex = 0;
-let currentMode = 'sweet';
+let deck = [];
+let idx = 0;
+let mode = '';
 
 function shuffle(arr) {
   const a = [...arr];
@@ -118,51 +118,46 @@ function shuffle(arr) {
   return a;
 }
 
-function showScreen(id) {
+function show(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-function startGame(mode) {
-  currentMode = mode;
-  currentDeck = shuffle(QUESTIONS[mode]);
-  currentIndex = 0;
-  const card = document.getElementById('card');
-  const label = document.getElementById('card-mode-label');
-  label.textContent = mode;
-  if (mode === 'saucy') {
-    card.classList.add('saucy-mode');
-  } else {
-    card.classList.remove('saucy-mode');
-  }
-  showScreen('screen-game');
+function startGame(m) {
+  mode = m;
+  deck = shuffle(QUESTIONS[m]);
+  idx = 0;
+
+  const card = document.getElementById('q-card');
+  card.className = 'q-card' + (m === 'saucy' ? ' saucy-q' : '');
+
+  document.getElementById('q-mode').textContent = m === 'sweet' ? 'sweet' : 'saucy';
+
+  show('screen-game');
   renderCard();
 }
 
 function renderCard() {
-  const card = document.getElementById('card');
-  const text = document.getElementById('card-text');
+  const card = document.getElementById('q-card');
+  const text = document.getElementById('q-text');
   const counter = document.getElementById('card-counter');
-  const progress = document.getElementById('progress-bar');
+  const bar = document.getElementById('prog-bar');
 
-  text.textContent = currentDeck[currentIndex];
-  counter.textContent = `${currentIndex + 1} / ${currentDeck.length}`;
-  progress.style.width = `${((currentIndex + 1) / currentDeck.length) * 100}%`;
+  text.textContent = deck[idx];
+  counter.textContent = (idx + 1) + ' / ' + deck.length;
+  bar.style.width = ((idx + 1) / deck.length * 100) + '%';
 
-  card.classList.remove('animate-in');
+  card.classList.remove('in');
   void card.offsetWidth;
-  card.classList.add('animate-in');
+  card.classList.add('in');
 }
 
 function nextCard() {
-  currentIndex++;
-  if (currentIndex >= currentDeck.length) {
-    showScreen('screen-end');
-    return;
-  }
+  idx++;
+  if (idx >= deck.length) { show('screen-end'); return; }
   renderCard();
 }
 
 function goHome() {
-  showScreen('screen-home');
+  show('screen-home');
 }

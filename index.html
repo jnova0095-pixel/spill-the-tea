@@ -4,129 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Spill the Tea</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- FLORAL CORNERS -->
-  <div class="floral floral-tl">
-    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g opacity="0.55" stroke="#f4a7c0" stroke-width="1.5" fill="#f4a7c0" fill-opacity="0.18">
-        <circle cx="30" cy="30" r="12"/>
-        <circle cx="30" cy="30" r="5"/>
-        <ellipse cx="30" cy="14" rx="5" ry="9" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="30" cy="46" rx="5" ry="9" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="14" cy="30" rx="9" ry="5" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="46" cy="30" rx="9" ry="5" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="19" cy="19" rx="5" ry="9" transform="rotate(45 19 19)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="41" cy="41" rx="5" ry="9" transform="rotate(45 41 41)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="41" cy="19" rx="5" ry="9" transform="rotate(-45 41 19)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="19" cy="41" rx="5" ry="9" transform="rotate(-45 19 41)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <!-- second flower -->
-        <circle cx="72" cy="22" r="9"/>
-        <circle cx="72" cy="22" r="4"/>
-        <ellipse cx="72" cy="10" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="72" cy="34" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="60" cy="22" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="84" cy="22" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <!-- third flower -->
-        <circle cx="22" cy="72" r="9"/>
-        <circle cx="22" cy="72" r="4"/>
-        <ellipse cx="22" cy="60" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="22" cy="84" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="10" cy="72" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="34" cy="72" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <!-- leaves/stems -->
-        <path d="M50 50 Q60 40 75 45" stroke="#f4a7c0" stroke-width="1.2" fill="none"/>
-        <path d="M50 50 Q40 60 45 75" stroke="#f4a7c0" stroke-width="1.2" fill="none"/>
-        <path d="M0 80 Q20 70 30 50" stroke="#f4a7c0" stroke-width="1" fill="none"/>
-        <path d="M80 0 Q70 20 50 30" stroke="#f4a7c0" stroke-width="1" fill="none"/>
-      </g>
-    </svg>
-  </div>
-
-  <div class="floral floral-br">
-    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" fill="none">
-      <g opacity="0.45" stroke="#f4a7c0" stroke-width="1.5" fill="#f4a7c0" fill-opacity="0.18">
-        <circle cx="130" cy="130" r="12"/>
-        <circle cx="130" cy="130" r="5"/>
-        <ellipse cx="130" cy="114" rx="5" ry="9" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="130" cy="146" rx="5" ry="9" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="114" cy="130" rx="9" ry="5" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="146" cy="130" rx="9" ry="5" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="119" cy="119" rx="5" ry="9" transform="rotate(45 119 119)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="141" cy="141" rx="5" ry="9" transform="rotate(45 141 141)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="141" cy="119" rx="5" ry="9" transform="rotate(-45 141 119)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="119" cy="141" rx="5" ry="9" transform="rotate(-45 119 141)" fill="#f4a7c0" fill-opacity="0.35"/>
-        <circle cx="90" cy="138" r="9"/>
-        <circle cx="90" cy="138" r="4"/>
-        <ellipse cx="90" cy="126" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="90" cy="150" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="78" cy="138" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="102" cy="138" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <circle cx="138" cy="90" r="9"/>
-        <circle cx="138" cy="90" r="4"/>
-        <ellipse cx="138" cy="78" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="138" cy="102" rx="4" ry="7" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="126" cy="90" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <ellipse cx="150" cy="90" rx="7" ry="4" fill="#f4a7c0" fill-opacity="0.35"/>
-        <path d="M110 110 Q100 120 85 115" stroke="#f4a7c0" stroke-width="1.2" fill="none"/>
-        <path d="M110 110 Q120 100 115 85" stroke="#f4a7c0" stroke-width="1.2" fill="none"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- HOME SCREEN -->
+  <!-- HOME -->
   <div id="screen-home" class="screen active">
-    <div class="home-inner">
-      <h1 class="title">Spill the Tea</h1>
-      <p class="subtitle">pick your poison</p>
-      <div class="stack-choices">
-        <button class="deck-card sweet-deck" onclick="startGame('sweet')">
-          <span class="deck-name">Sweet</span>
-          <span class="deck-desc">Deep questions. Real conversations.</span>
-        </button>
-        <button class="deck-card saucy-deck" onclick="startGame('saucy')">
-          <span class="deck-name">Saucy</span>
-          <span class="deck-desc">Bolder. Spicier. No filter.</span>
-        </button>
+    <div class="home-wrap">
+      <div class="title-block">
+        <h1 class="title">Spill<br>the Tea</h1>
+        <p class="tagline">a game for girls with nothing to hide<br>and everything to spill</p>
+      </div>
+
+      <div class="decks-wrap">
+        <!-- SWEET DECK -->
+        <div class="deck-stack" id="deck-sweet" onclick="startGame('sweet')">
+          <div class="deck-card dc-back dc-back3"></div>
+          <div class="deck-card dc-back dc-back2"></div>
+          <div class="deck-card dc-back dc-back1"></div>
+          <div class="deck-card dc-front sweet-front">
+            <div class="front-inner">
+              <span class="deck-tag">01</span>
+              <span class="deck-title">Sweet</span>
+              <span class="deck-sub">Deep questions.<br>Real conversations.</span>
+              <span class="deck-cta">tap to play →</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SAUCY DECK -->
+        <div class="deck-stack" id="deck-saucy" onclick="startGame('saucy')">
+          <div class="deck-card dc-back dc-back3 saucy-back"></div>
+          <div class="deck-card dc-back dc-back2 saucy-back"></div>
+          <div class="deck-card dc-back dc-back1 saucy-back"></div>
+          <div class="deck-card dc-front saucy-front">
+            <div class="front-inner">
+              <span class="deck-tag">02</span>
+              <span class="deck-title">Saucy</span>
+              <span class="deck-sub">Bolder. Spicier.<br>No filter.</span>
+              <span class="deck-cta">tap to play →</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- GAME SCREEN -->
+  <!-- GAME -->
   <div id="screen-game" class="screen">
-    <div class="game-header">
+    <div class="game-top">
       <button class="back-btn" onclick="goHome()">← back</button>
-      <span id="card-counter" class="card-counter"></span>
+      <span id="card-counter" class="counter"></span>
     </div>
 
-    <div class="card-area">
-      <!-- ghost cards for stack effect -->
-      <div class="ghost-card ghost-2"></div>
-      <div class="ghost-card ghost-1"></div>
-      <!-- main card -->
-      <div id="card" class="main-card" onclick="nextCard()">
-        <div class="card-mode-label" id="card-mode-label"></div>
-        <p id="card-text" class="card-question"></p>
-        <span class="tap-hint">tap to continue</span>
+    <div class="game-body">
+      <div class="q-stack">
+        <div class="q-ghost q-ghost2"></div>
+        <div class="q-ghost q-ghost1"></div>
+        <div class="q-card" id="q-card" onclick="nextCard()">
+          <span class="q-mode" id="q-mode"></span>
+          <p class="q-text" id="q-text"></p>
+          <span class="q-hint">tap for next</span>
+        </div>
       </div>
     </div>
 
-    <div class="progress-bar-wrap">
-      <div id="progress-bar" class="progress-bar"></div>
-    </div>
+    <div class="prog-wrap"><div class="prog-bar" id="prog-bar"></div></div>
   </div>
 
-  <!-- END SCREEN -->
+  <!-- END -->
   <div id="screen-end" class="screen">
-    <div class="home-inner">
-      <h1 class="title">That's all<br>the tea.</h1>
-      <p class="subtitle">hope it was a night to remember</p>
-      <div class="stack-choices">
-        <button class="deck-card sweet-deck" onclick="goHome()">Play Again</button>
-      </div>
+    <div class="end-wrap">
+      <h2 class="end-title">That's all<br>the tea.</h2>
+      <p class="end-sub">hope it was a night to remember ✦</p>
+      <button class="play-again" onclick="goHome()">Play again</button>
     </div>
   </div>
 

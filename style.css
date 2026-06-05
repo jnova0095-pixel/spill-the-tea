@@ -83,7 +83,7 @@ html, body {
 .deck-stack {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 210px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -111,6 +111,20 @@ html, body {
   box-shadow: 0 8px 32px rgba(60,120,170,0.18), 0 2px 8px rgba(60,120,170,0.10);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 4;
+  overflow: hidden;
+}
+
+/* Paper texture overlay */
+.dc-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
 }
 
 .saucy-front { background: var(--saucy-cream); }
@@ -230,7 +244,7 @@ html, body {
   position: relative;
   z-index: 3;
   width: 100%;
-  min-height: 300px;
+  min-height: 380px;
   background: var(--cream);
   border-radius: var(--r);
   box-shadow: 0 16px 48px rgba(60,120,170,0.18), 0 3px 10px rgba(60,120,170,0.10);
@@ -242,6 +256,20 @@ html, body {
   gap: 20px;
   user-select: none;
   transition: transform 0.15s ease;
+  overflow: hidden;
+}
+
+/* Paper texture on question cards */
+.q-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
 }
 
 .q-card:active { transform: scale(0.975); }
@@ -259,15 +287,16 @@ html, body {
 .q-card.saucy-q .q-mode { color: var(--saucy-accent); }
 
 .q-text {
-  font-family: var(--title);
-  font-size: 26px;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 1.4;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.55;
   color: var(--text);
   flex: 1;
   display: flex;
   align-items: center;
+  letter-spacing: -0.01em;
 }
 
 .q-hint {

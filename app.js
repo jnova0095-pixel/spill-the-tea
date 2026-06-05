@@ -109,6 +109,9 @@ let deck = [];
 let idx = 0;
 let mode = '';
 
+// Tracks answered questions per deck — persists across stack switches within a session
+const answered = { sweet: new Set(), saucy: new Set() };
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -125,7 +128,8 @@ function show(id) {
 
 function startGame(m) {
   mode = m;
-  deck = shuffle(QUESTIONS[m]);
+  const pool = QUESTIONS[m].filter(q => !answered[m].has(q));
+  deck = shuffle(pool.length > 0 ? pool : (answered[m].clear(), QUESTIONS[m]));
   idx = 0;
   const card = document.getElementById('q-card');
   card.className = 'q-card' + (m === 'saucy' ? ' saucy-q' : '');
@@ -139,9 +143,11 @@ function renderCard() {
   const text = document.getElementById('q-text');
   const counter = document.getElementById('card-counter');
   const bar = document.getElementById('prog-bar');
+  const btn = document.querySelector('.done-btn');
   text.textContent = deck[idx];
   counter.textContent = (idx + 1) + ' / ' + deck.length;
   bar.style.width = ((idx + 1) / deck.length * 100) + '%';
+  if (btn) { btn.textContent = '✓ done'; btn.style.opacity = ''; }
   card.classList.remove('in');
   void card.offsetWidth;
   card.classList.add('in');
@@ -151,6 +157,19 @@ function nextCard() {
   idx++;
   if (idx >= deck.length) { show('screen-end'); return; }
   renderCard();
+}
+
+function markDone(e) {
+  e.stopPropagation();
+  answered[mode].add(deck[idx]);
+  const btn = e.currentTarget;
+  btn.textContent = '✓ noted';
+  btn.style.opacity = '0.5';
+  setTimeout(() => {
+    idx++;
+    if (idx >= deck.length) { show('screen-end'); return; }
+    renderCard();
+  }, 380);
 }
 
 function goHome() {

@@ -45,7 +45,7 @@ html, body {
   align-items: center;
   gap: 28px;
   padding-top: max(20px, env(safe-area-inset-top, 20px));
-  margin-top: -40px;
+  margin-top: -10px;
 }
 
 .title-block {
@@ -331,14 +331,28 @@ html, body {
   border-color: rgba(176,122,204,0.3);
 }
 
-.q-hint {
-  font-family: var(--body);
-  font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--mid);
-  opacity: 0.5;
+.nav-btns {
+  display: flex;
+  gap: 8px;
 }
+
+.nav-btn {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--mid);
+  background: rgba(138,112,128,0.10);
+  border: 1px solid rgba(138,112,128,0.2);
+  border-radius: 50px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.nav-btn:active { transform: scale(0.92); }
 
 /* Card slide-in animation */
 @keyframes slideIn {

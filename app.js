@@ -164,6 +164,10 @@ function nextCard() {
   renderCard();
 }
 
+function prevCard() {
+  if (idx > 0) { idx--; renderCard(); }
+}
+
 function markDone(e) {
   e.stopPropagation();
   answered[mode].add(deck[idx]);

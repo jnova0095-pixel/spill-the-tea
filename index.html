@@ -67,7 +67,10 @@
           <p class="q-text" id="q-text"></p>
           <div class="card-actions">
             <button class="done-btn" onclick="markDone(event)">✓ done</button>
-            <span class="q-hint">tap card for next</span>
+            <div class="nav-btns">
+              <button class="nav-btn" onclick="event.stopPropagation(); prevCard()">←</button>
+              <button class="nav-btn" onclick="event.stopPropagation(); nextCard()">→</button>
+            </div>
           </div>
         </div>
       </div>

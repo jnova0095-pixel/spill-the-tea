@@ -45,7 +45,7 @@ html, body {
   align-items: center;
   gap: 28px;
   padding-top: max(20px, env(safe-area-inset-top, 20px));
-  margin-top: -40px;
+  margin-top: -10px;
 }
 
 .title-block {

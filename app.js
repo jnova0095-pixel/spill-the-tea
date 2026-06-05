@@ -109,7 +109,6 @@ let deck = [];
 let idx = 0;
 let mode = '';
 
-// Tracks answered questions per deck — persists across stack switches within a session
 const answered = { sweet: new Set(), saucy: new Set() };
 
 function shuffle(arr) {
@@ -173,5 +172,11 @@ function markDone(e) {
 }
 
 function goHome() {
+  show('screen-home');
+}
+
+function newSession() {
+  answered.sweet.clear();
+  answered.saucy.clear();
   show('screen-home');
 }

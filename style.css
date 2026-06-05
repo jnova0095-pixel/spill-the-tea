@@ -406,3 +406,20 @@ html, body {
   transition: transform 0.15s ease;
 }
 .play-again:active { transform: scale(0.97); }
+
+.new-session-btn {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  background: none;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  padding: 12px 28px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s ease;
+}
+.new-session-btn:active { opacity: 0.6; }

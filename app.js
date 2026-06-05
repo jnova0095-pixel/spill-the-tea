@@ -180,3 +180,9 @@ function markDone(e) {
 function goHome() {
   show('screen-home');
 }
+
+function newSession() {
+  answered.sweet.clear();
+  answered.saucy.clear();
+  show('screen-home');
+}

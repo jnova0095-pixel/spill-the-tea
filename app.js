@@ -127,16 +127,14 @@ function startGame(mode) {
   currentMode = mode;
   currentDeck = shuffle(QUESTIONS[mode]);
   currentIndex = 0;
-
-  document.getElementById('game-title').textContent = mode === 'sweet' ? 'Sweet' : 'Saucy';
-
   const card = document.getElementById('card');
+  const label = document.getElementById('card-mode-label');
+  label.textContent = mode;
   if (mode === 'saucy') {
-    card.classList.add('saucy-card');
+    card.classList.add('saucy-mode');
   } else {
-    card.classList.remove('saucy-card');
+    card.classList.remove('saucy-mode');
   }
-
   showScreen('screen-game');
   renderCard();
 }

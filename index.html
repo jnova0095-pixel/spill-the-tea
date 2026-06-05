@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Spill the Tea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HOME SCREEN -->
+  <div id="screen-home" class="screen active">
+    <div class="home-inner">
+      <div class="tea-icon">🫖</div>
+      <h1 class="title">Spill the Tea</h1>
+      <p class="subtitle">A card game for the girls who know everything<br>and the secrets they haven't told yet.</p>
+      <div class="stack-choices">
+        <button class="stack-btn sweet" onclick="startGame('sweet')">
+          <span class="stack-label">Sweet</span>
+          <span class="stack-desc">Deep questions. Real conversations.</span>
+        </button>
+        <button class="stack-btn saucy" onclick="startGame('saucy')">
+          <span class="stack-label">Saucy</span>
+          <span class="stack-desc">Bolder. Spicier. No filter.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="screen-game" class="screen">
+    <div class="game-header">
+      <button class="back-btn" onclick="goHome()">← Back</button>
+      <span id="game-title" class="game-title-label"></span>
+      <span id="card-counter" class="card-counter"></span>
+    </div>
+
+    <div class="card-area">
+      <div id="card-stack-visual" class="card-stack-visual"></div>
+      <div id="card" class="card" onclick="nextCard()">
+        <div class="card-inner">
+          <div class="card-top-deco"></div>
+          <p id="card-text" class="card-text"></p>
+          <div class="card-bottom-deco"></div>
+          <span class="card-tap-hint">tap to continue</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="progress-bar-wrap">
+      <div id="progress-bar" class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- END SCREEN -->
+  <div id="screen-end" class="screen">
+    <div class="end-inner">
+      <div class="tea-icon">🌸</div>
+      <h2 class="end-title">That's all the tea.</h2>
+      <p class="end-sub">Hope it was a night to remember.</p>
+      <button class="stack-btn sweet" onclick="goHome()">Play Again</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

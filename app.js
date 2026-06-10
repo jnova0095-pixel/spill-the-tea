@@ -189,8 +189,29 @@ function goHome() {
   show('screen-home');
 }
 
+function goWelcome() {
+  show('screen-welcome');
+}
+
 function newSession() {
   answered.sweet.clear();
   answered.saucy.clear();
   show('screen-home');
 }
+
+/* ── JS cursor: follows mouse on desktop, finger on mobile ── */
+(function () {
+  const el = document.getElementById('custom-cursor');
+  if (!el) return;
+
+  function move(x, y) {
+    el.style.transform = 'translate(' + (x - 4) + 'px,' + (y - 4) + 'px)';
+    el.style.opacity = '1';
+  }
+
+  document.addEventListener('mousemove',   e => move(e.clientX, e.clientY));
+  document.addEventListener('touchstart',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchmove',   e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchend',    () => { el.style.opacity = '0'; });
+  document.addEventListener('mouseleave',  () => { el.style.opacity = '0'; });
+})();

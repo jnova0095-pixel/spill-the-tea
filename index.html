@@ -4,54 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Spill the Tea</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HOME -->
-  <div id="screen-home" class="screen active">
-    <div class="home-wrap">
-      <div class="title-block">
-        <h1 class="title">Spill<br>the Tea</h1>
-        <p class="tagline">pick your poison</p>
+  <!-- ── WELCOME ── -->
+  <div id="screen-welcome" class="screen active">
+    <!-- Decorative elements -->
+    <img class="deco w-clip"   src="assets/Paper clip.png"   alt="">
+    <img class="deco w-cursor" src="assets/Cursor.png"       alt="">
+    <img class="deco w-stars"  src="assets/Pixel stars.png"  alt="">
+    <img class="deco w-noway"  src="assets/Pixel no way.png" alt="">
+    <img class="deco w-drop"   src="assets/Pixel drop.png"   alt="">
+    <img class="deco w-emoji"  src="assets/Pixel emoji.png"  alt="">
+    <img class="deco w-really" src="assets/Pixel really.png" alt="">
+    <img class="deco w-heart"  src="assets/Pixel heart.png"  alt="">
+
+    <!-- Title -->
+    <h1 class="splash-title">Spill the<br>Tea</h1>
+
+    <!-- Cup + CTA -->
+    <div class="cup-wrap">
+      <button class="play-cup-btn" onclick="goToDecks()">play the game</button>
+      <img class="cup-img" src="assets/Cup.png" alt="teacup">
+    </div>
+  </div>
+
+  <!-- ── DECK SELECTION ── -->
+  <div id="screen-home" class="screen">
+    <img class="deco h-clip"  src="assets/Paper clip.png"  alt="">
+    <img class="deco h-stars" src="assets/Pixel stars.png" alt="">
+    <img class="deco h-heart" src="assets/Pixel heart.png" alt="">
+
+    <div class="decks-wrap">
+      <div class="deck-btn sweet-btn" onclick="startGame('sweet')">
+        <span class="deck-name">Sweet</span>
       </div>
-
-      <div class="decks-wrap">
-        <!-- SWEET DECK -->
-        <div class="deck-stack" id="deck-sweet" onclick="startGame('sweet')">
-          <div class="deck-card dc-back dc-back3"></div>
-          <div class="deck-card dc-back dc-back2"></div>
-          <div class="deck-card dc-back dc-back1"></div>
-          <div class="deck-card dc-front sweet-front">
-            <div class="front-inner">
-              <span class="deck-tag">01</span>
-              <span class="deck-title">Sweet</span>
-              <span class="deck-sub">Deep questions.<br>Real conversations.</span>
-              <span class="deck-cta">tap to play →</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SAUCY DECK -->
-        <div class="deck-stack" id="deck-saucy" onclick="startGame('saucy')">
-          <div class="deck-card dc-back dc-back3 saucy-back"></div>
-          <div class="deck-card dc-back dc-back2 saucy-back"></div>
-          <div class="deck-card dc-back dc-back1 saucy-back"></div>
-          <div class="deck-card dc-front saucy-front">
-            <div class="front-inner">
-              <span class="deck-tag">02</span>
-              <span class="deck-title">Saucy</span>
-              <span class="deck-sub">Bolder. Spicier.<br>No filter.</span>
-              <span class="deck-cta">tap to play →</span>
-            </div>
-          </div>
-        </div>
+      <div class="deck-btn saucy-btn" onclick="startGame('saucy')">
+        <span class="deck-name">Saucy</span>
       </div>
     </div>
   </div>
 
-  <!-- GAME -->
+  <!-- ── GAME ── -->
   <div id="screen-game" class="screen">
     <div class="game-top">
       <button class="back-btn" onclick="goHome()">← back</button>
@@ -79,7 +75,7 @@
     <div class="prog-wrap"><div class="prog-bar" id="prog-bar"></div></div>
   </div>
 
-  <!-- END -->
+  <!-- ── END ── -->
   <div id="screen-end" class="screen">
     <div class="end-wrap">
       <h2 class="end-title">That's all<br>the tea.</h2>

@@ -181,6 +181,10 @@ function markDone(e) {
   }, 380);
 }
 
+function goToDecks() {
+  show('screen-home');
+}
+
 function goHome() {
   show('screen-home');
 }

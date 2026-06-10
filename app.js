@@ -138,14 +138,14 @@ function startGame(m) {
 }
 
 function renderCard() {
-  const card = document.getElementById('q-card');
-  const text = document.getElementById('q-text');
+  const text    = document.getElementById('q-text');
   const counter = document.getElementById('card-counter');
-  const bar = document.getElementById('prog-bar');
-  const btn = document.querySelector('.done-btn');
-  text.textContent = deck[idx];
+  const bar     = document.getElementById('prog-bar');
+  const card    = document.getElementById('q-card');
+  const btn     = document.querySelector('.done-btn');
+  text.textContent    = deck[idx];
   counter.textContent = (idx + 1) + ' / ' + deck.length;
-  bar.style.width = ((idx + 1) / deck.length * 100) + '%';
+  bar.style.width     = ((idx + 1) / deck.length * 100) + '%';
   if (btn) { btn.textContent = '✓ done'; btn.style.opacity = ''; }
   card.classList.remove('in');
   void card.offsetWidth;
@@ -175,16 +175,27 @@ function markDone(e) {
   }, 380);
 }
 
-function goToDecks() {
-  show('screen-home');
-}
-
-function goHome() {
-  show('screen-home');
-}
+function goToDecks()  { show('screen-home'); }
+function goHome()     { show('screen-home'); }
+function goWelcome()  { show('screen-welcome'); }
 
 function newSession() {
   answered.sweet.clear();
   answered.saucy.clear();
   show('screen-home');
 }
+
+/* ── JS cursor: follows mouse on desktop, finger on mobile ── */
+(function () {
+  const el = document.getElementById('custom-cursor');
+  if (!el) return;
+  function move(x, y) {
+    el.style.transform = 'translate(' + (x - 4) + 'px,' + (y - 4) + 'px)';
+    el.style.opacity = '1';
+  }
+  document.addEventListener('mousemove',  e => move(e.clientX, e.clientY));
+  document.addEventListener('touchstart', e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchmove',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchend',   () => { el.style.opacity = '0'; });
+  document.addEventListener('mouseleave', () => { el.style.opacity = '0'; });
+})();

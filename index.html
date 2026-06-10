@@ -9,28 +9,47 @@
 </head>
 <body>
 
+  <!-- JS cursor overlay (follows mouse + touch) -->
+  <div id="custom-cursor"></div>
+
   <!-- ── WELCOME ── -->
   <div id="screen-welcome" class="screen active">
-    <img class="deco w-clip"   src="Paper clip.png"   alt="">
-    <img class="deco w-cursor" src="Cursor.png"       alt="">
-    <img class="deco w-stars"  src="Pixel stars.png"  alt="">
-    <img class="deco w-noway"  src="Pixel no way.png" alt="">
-    <img class="deco w-drop"   src="Pixel drops.png"  alt="">
-    <img class="deco w-emoji"  src="Pixel emoji.png"  alt="">
-    <img class="deco w-really" src="Pixel really.png" alt="">
-    <img class="deco w-heart"  src="Pixel heart.png"  alt="">
+    <div class="welcome-inner">
 
-    <h1 class="splash-title">Spill the<br>Tea</h1>
+      <!-- Pinned paper clip -->
+      <img class="deco w-clip" src="Paper clip.png" alt="">
 
-    <div class="cup-wrap">
-      <button class="play-cup-btn" onclick="goToDecks()">play the game</button>
-      <img class="cup-img" src="Cup.png" alt="teacup">
+      <!-- Floating cursor deco (upper-right) -->
+      <img class="deco w-cursor-deco" src="Cursor.png" alt="">
+
+      <!-- Speech bubbles -->
+      <img class="deco w-noway"  src="Pixel no way.png" alt="">
+      <img class="deco w-drop"   src="Pixel drops.png"  alt="">
+      <img class="deco w-emoji"  src="Pixel emoji.png"  alt="">
+      <img class="deco w-really" src="Pixel really.png" alt="">
+
+      <!-- Centered title -->
+      <h1 class="splash-title">Spill the<br>Tea</h1>
+
+      <!-- Cup + CTA -->
+      <div class="cup-wrap">
+        <button class="play-cup-btn" onclick="goToDecks()">play the game</button>
+        <img class="cup-img" src="Cup.png" alt="teacup">
+      </div>
+
     </div>
   </div>
 
   <!-- ── DECK SELECTION ── -->
   <div id="screen-home" class="screen">
+
+    <!-- Back to welcome -->
+    <button class="back-btn home-back" onclick="goWelcome()">← back</button>
+
+    <!-- Pinned paper clip -->
     <img class="deco h-clip"  src="Paper clip.png"  alt="">
+
+    <!-- Pixel decorations (only on this page) -->
     <img class="deco h-stars" src="Pixel stars.png" alt="">
     <img class="deco h-heart" src="Pixel heart.png" alt="">
 

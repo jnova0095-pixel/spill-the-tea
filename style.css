@@ -3,10 +3,10 @@
 
 /* ── Custom cursor ── */
 html {
-  cursor: url('assets/Cursor.png') 4 4, auto;
+  cursor: url('Cursor.png') 4 4, auto;
 }
 button, [onclick], .deck-btn, .play-cup-btn {
-  cursor: url('assets/Cursor.png') 4 4, pointer;
+  cursor: url('Cursor.png') 4 4, pointer;
 }
 
 :root {

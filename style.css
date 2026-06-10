@@ -3,10 +3,10 @@
 
 /* ── Custom cursor ── */
 html {
-  cursor: url('assets/Cursor.png') 4 4, auto;
+  cursor: url('Cursor.png') 4 4, auto;
 }
 button, [onclick], .deck-btn, .play-cup-btn {
-  cursor: url('assets/Cursor.png') 4 4, pointer;
+  cursor: url('Cursor.png') 4 4, pointer;
 }
 
 :root {
@@ -488,11 +488,14 @@ html, body {
    RESPONSIVE
 ════════════════════════════════════════ */
 
+@media (min-width: 500px) {
+  .splash-title { font-size: clamp(72px, 14vw, 104px); }
+  .deck-name    { font-size: clamp(52px, 10vw, 72px); }
+}
 @media (min-width: 600px) {
   .decks-wrap { max-width: 480px; }
   .cup-wrap   { width: clamp(240px, 55vw, 380px); }
 }
-
 @media (max-height: 600px) {
   .splash-title { top: 8%;  font-size: clamp(44px, 10vw, 72px); }
   .cup-wrap     { top: 42%; width: clamp(160px, 54vw, 260px); }

@@ -204,19 +204,16 @@ function newSession() {
   const el = document.getElementById('custom-cursor');
   if (!el) return;
 
-  const half = 28; // half of 56px cursor size
+  const half = 39; // half of 78px cursor size
 
   function move(x, y) {
     el.style.transform = 'translate(' + (x - half) + 'px,' + (y - half) + 'px)';
-    el.style.opacity = '1';
   }
 
   // Show cursor at screen center on load — visible before first interaction
   move(window.innerWidth / 2, window.innerHeight / 2);
 
-  document.addEventListener('mousemove',   e => move(e.clientX, e.clientY));
-  document.addEventListener('touchstart',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchmove',   e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchend',    () => { el.style.opacity = '0'; });
-  document.addEventListener('mouseleave',  () => { el.style.opacity = '0'; });
+  document.addEventListener('mousemove',  e => move(e.clientX, e.clientY));
+  document.addEventListener('touchstart', e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchmove',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
 })();

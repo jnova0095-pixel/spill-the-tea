@@ -128,9 +128,7 @@ function show(id) {
 
 function startGame(m) {
   mode = m;
-  // Filter out already-answered questions
   const pool = QUESTIONS[m].filter(q => !answered[m].has(q));
-  // If all done, reset that deck
   deck = shuffle(pool.length > 0 ? pool : (answered[m].clear(), QUESTIONS[m]));
   idx = 0;
 
@@ -181,17 +179,9 @@ function markDone(e) {
   }, 380);
 }
 
-function goToDecks() {
-  show('screen-home');
-}
-
-function goHome() {
-  show('screen-home');
-}
-
-function goWelcome() {
-  show('screen-welcome');
-}
+function goToDecks() { show('screen-home'); }
+function goHome()    { show('screen-home'); }
+function goWelcome() { show('screen-welcome'); }
 
 function newSession() {
   answered.sweet.clear();
@@ -204,19 +194,16 @@ function newSession() {
   const el = document.getElementById('custom-cursor');
   if (!el) return;
 
-  const half = 28; // half of 56px cursor size
+  const half = 39; // half of 78px cursor
 
   function move(x, y) {
     el.style.transform = 'translate(' + (x - half) + 'px,' + (y - half) + 'px)';
-    el.style.opacity = '1';
   }
 
-  // Show cursor at screen center on load — visible before first interaction
+  // Visible at screen centre before first interaction
   move(window.innerWidth / 2, window.innerHeight / 2);
 
-  document.addEventListener('mousemove',   e => move(e.clientX, e.clientY));
-  document.addEventListener('touchstart',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchmove',   e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchend',    () => { el.style.opacity = '0'; });
-  document.addEventListener('mouseleave',  () => { el.style.opacity = '0'; });
+  document.addEventListener('mousemove',  e => move(e.clientX, e.clientY));
+  document.addEventListener('touchstart', e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchmove',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
 })();

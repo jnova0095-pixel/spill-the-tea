@@ -4,17 +4,16 @@
 /* ── Hide native cursor everywhere – JS cursor handles it ── */
 html, body, *, *::before, *::after { cursor: none !important; }
 
-/* ── JS cursor element – 56px (40 × 1.4), visible on load ── */
+/* ── JS cursor element – 78px, always visible ── */
 #custom-cursor {
   position: fixed;
   left: 0; top: 0;
-  width: 56px; height: 56px;
+  width: 78px; height: 78px;
   background: url('Cursor.png') no-repeat left top / contain;
   pointer-events: none;
   z-index: 99999;
   opacity: 1;
   will-change: transform;
-  transition: opacity 0.12s ease;
 }
 
 :root {
@@ -98,16 +97,16 @@ html, body {
   z-index: 4;
 }
 
-/* ── "No waaay" bubble – left, 20% bigger, pushed away from cup ── */
+/* ── "No waaay" bubble – left, moved up 115px ── */
 .w-noway {
-  top: 48%;
+  top: calc(48% - 115px);
   left: -6%;
   width: clamp(132px, 36vw, 216px);
   animation: floatA 4.6s ease-in-out infinite 0.3s;
   z-index: 6;
 }
 
-/* ── Drops bubble – right, 20% bigger, pushed away from cup ── */
+/* ── Drops bubble – right ── */
 .w-drop {
   top: 30%;
   right: -4%;
@@ -164,16 +163,16 @@ html, body {
   transform: translateX(-50%) scale(0.96);
 }
 
-/* ── Emoji bubble – lower-left, 20% bigger, pushed away from cup ── */
+/* ── Emoji bubble – moved up 100px, 30% bigger ── */
 .w-emoji {
-  top: 70%;
+  top: calc(70% - 100px);
   left: -4%;
-  width: clamp(96px, 24vw, 156px);
+  width: clamp(125px, 31vw, 203px);
   animation: floatC 4.8s ease-in-out infinite 1s;
   z-index: 6;
 }
 
-/* ── "Really?!" bubble – lower-right, 20% bigger, pushed away from cup ── */
+/* ── "Really?!" bubble – lower-right ── */
 .w-really {
   top: 68%;
   right: -4%;
@@ -182,13 +181,13 @@ html, body {
   z-index: 6;
 }
 
-/* ── Sugar cubes – bottom-right ── */
+/* ── Sugar cubes – raised 200px, in front of cup ── */
 .w-sugar {
-  bottom: -2%;
+  bottom: calc(-2% + 200px);
   right: -6%;
   width: clamp(160px, 44vw, 240px);
   image-rendering: auto;
-  z-index: 2;
+  z-index: 4;
   animation: floatB 5.6s ease-in-out infinite 0.2s;
 }
 

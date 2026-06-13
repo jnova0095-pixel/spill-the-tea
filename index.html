@@ -16,17 +16,14 @@
   <div id="screen-welcome" class="screen active">
     <div class="welcome-inner">
 
-      <!-- Pinned paper clip -->
-      <img class="deco w-clip" src="Paper clip.png" alt="">
-
-      <!-- Floating cursor deco (upper-right) -->
-      <img class="deco w-cursor-deco" src="Cursor.png" alt="">
-
       <!-- Speech bubbles -->
       <img class="deco w-noway"  src="Pixel no way.png" alt="">
       <img class="deco w-drop"   src="Pixel drops.png"  alt="">
       <img class="deco w-emoji"  src="Pixel emoji.png"  alt="">
       <img class="deco w-really" src="Pixel really.png" alt="">
+
+      <!-- Sugar cubes – bottom right -->
+      <img class="deco w-sugar"  src="Sugar.png" alt="">
 
       <!-- Centered title -->
       <h1 class="splash-title">Spill the<br>Tea</h1>
@@ -43,23 +40,21 @@
   <!-- ── DECK SELECTION ── -->
   <div id="screen-home" class="screen">
 
-    <!-- Back to welcome -->
-    <button class="back-btn home-back" onclick="goWelcome()">← back</button>
-
-    <!-- Pinned paper clip -->
-    <img class="deco h-clip"  src="Paper clip.png"  alt="">
-
     <!-- Pixel decorations (only on this page) -->
     <img class="deco h-stars" src="Pixel stars.png" alt="">
     <img class="deco h-heart" src="Pixel heart.png" alt="">
 
-    <div class="decks-wrap">
-      <div class="deck-btn sweet-btn" onclick="startGame('sweet')">
-        <span class="deck-name">Sweet</span>
+    <div class="home-content">
+      <div class="decks-wrap">
+        <div class="deck-btn sweet-btn" onclick="startGame('sweet')">
+          <span class="deck-name">Sweet</span>
+        </div>
+        <div class="deck-btn saucy-btn" onclick="startGame('saucy')">
+          <span class="deck-name">Saucy</span>
+        </div>
       </div>
-      <div class="deck-btn saucy-btn" onclick="startGame('saucy')">
-        <span class="deck-name">Saucy</span>
-      </div>
+      <!-- Back button sits below the Saucy card -->
+      <button class="back-btn home-back" onclick="goWelcome()">← back</button>
     </div>
   </div>
 

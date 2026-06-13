@@ -109,6 +109,7 @@ let deck = [];
 let idx = 0;
 let mode = '';
 
+// Tracks answered questions per deck — persists across stack switches within a session
 const answered = { sweet: new Set(), saucy: new Set() };
 
 function shuffle(arr) {
@@ -127,9 +128,12 @@ function show(id) {
 
 function startGame(m) {
   mode = m;
+  // Filter out already-answered questions
   const pool = QUESTIONS[m].filter(q => !answered[m].has(q));
+  // If all done, reset that deck
   deck = shuffle(pool.length > 0 ? pool : (answered[m].clear(), QUESTIONS[m]));
   idx = 0;
+
   const card = document.getElementById('q-card');
   card.className = 'q-card' + (m === 'saucy' ? ' saucy-q' : '');
   document.getElementById('q-mode').textContent = m;
@@ -138,15 +142,17 @@ function startGame(m) {
 }
 
 function renderCard() {
-  const text    = document.getElementById('q-text');
+  const card = document.getElementById('q-card');
+  const text = document.getElementById('q-text');
   const counter = document.getElementById('card-counter');
-  const bar     = document.getElementById('prog-bar');
-  const card    = document.getElementById('q-card');
-  const btn     = document.querySelector('.done-btn');
-  text.textContent    = deck[idx];
+  const bar = document.getElementById('prog-bar');
+  const btn = document.querySelector('.done-btn');
+
+  text.textContent = deck[idx];
   counter.textContent = (idx + 1) + ' / ' + deck.length;
-  bar.style.width     = ((idx + 1) / deck.length * 100) + '%';
+  bar.style.width = ((idx + 1) / deck.length * 100) + '%';
   if (btn) { btn.textContent = '✓ done'; btn.style.opacity = ''; }
+
   card.classList.remove('in');
   void card.offsetWidth;
   card.classList.add('in');
@@ -175,9 +181,17 @@ function markDone(e) {
   }, 380);
 }
 
-function goToDecks()  { show('screen-home'); }
-function goHome()     { show('screen-home'); }
-function goWelcome()  { show('screen-welcome'); }
+function goToDecks() {
+  show('screen-home');
+}
+
+function goHome() {
+  show('screen-home');
+}
+
+function goWelcome() {
+  show('screen-welcome');
+}
 
 function newSession() {
   answered.sweet.clear();
@@ -189,13 +203,20 @@ function newSession() {
 (function () {
   const el = document.getElementById('custom-cursor');
   if (!el) return;
+
+  const half = 28; // half of 56px cursor size
+
   function move(x, y) {
-    el.style.transform = 'translate(' + (x - 4) + 'px,' + (y - 4) + 'px)';
+    el.style.transform = 'translate(' + (x - half) + 'px,' + (y - half) + 'px)';
     el.style.opacity = '1';
   }
-  document.addEventListener('mousemove',  e => move(e.clientX, e.clientY));
-  document.addEventListener('touchstart', e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchmove',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-  document.addEventListener('touchend',   () => { el.style.opacity = '0'; });
-  document.addEventListener('mouseleave', () => { el.style.opacity = '0'; });
+
+  // Show cursor at screen center on load — visible before first interaction
+  move(window.innerWidth / 2, window.innerHeight / 2);
+
+  document.addEventListener('mousemove',   e => move(e.clientX, e.clientY));
+  document.addEventListener('touchstart',  e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchmove',   e => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+  document.addEventListener('touchend',    () => { el.style.opacity = '0'; });
+  document.addEventListener('mouseleave',  () => { el.style.opacity = '0'; });
 })();

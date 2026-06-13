@@ -60,7 +60,6 @@ html, body {
   justify-content: stretch;
 }
 
-/* Centered container – caps at phone width, stays centered on MacBook */
 .welcome-inner {
   position: relative;
   width: 100%;
@@ -69,7 +68,6 @@ html, body {
   margin: 0 auto;
 }
 
-/* All decorative images */
 .deco {
   position: absolute;
   image-rendering: pixelated;
@@ -78,7 +76,6 @@ html, body {
   user-select: none;
 }
 
-/* ── Title – centered ── */
 .splash-title {
   position: absolute;
   top: 8%;
@@ -97,7 +94,6 @@ html, body {
   z-index: 4;
 }
 
-/* ── "No waaay" bubble – left, moved up 115px ── */
 .w-noway {
   top: calc(48% - 115px);
   left: -6%;
@@ -106,22 +102,20 @@ html, body {
   z-index: 6;
 }
 
-/* ── Drops bubble – right ── */
 .w-drop {
   top: 30%;
   right: -4%;
-  width: clamp(108px, 26vw, 180px);
+  width: clamp(140px, 34vw, 234px);
   animation: floatB 3.9s ease-in-out infinite 0.7s;
   z-index: 6;
 }
 
-/* ── Cup – moved up 15% ── */
 .cup-wrap {
   position: absolute;
-  top: 35%;
+  top: calc(35% + 40px);
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(220px, 72vw, 340px);
+  width: clamp(286px, 94vw, 442px);
   z-index: 3;
   animation: cupBob 4.2s ease-in-out infinite;
 }
@@ -135,7 +129,6 @@ html, body {
   animation: cupWobble 0.55s ease-in-out forwards;
 }
 
-/* "play the game" – inside cup opening, Helvetica Neue */
 .play-cup-btn {
   position: absolute;
   top: 14%;
@@ -163,7 +156,6 @@ html, body {
   transform: translateX(-50%) scale(0.96);
 }
 
-/* ── Emoji bubble – moved up 100px, 30% bigger ── */
 .w-emoji {
   top: calc(70% - 100px);
   left: -4%;
@@ -172,23 +164,12 @@ html, body {
   z-index: 6;
 }
 
-/* ── "Really?!" bubble – lower-right ── */
-.w-really {
-  top: 68%;
-  right: -4%;
-  width: clamp(120px, 30vw, 192px);
-  animation: floatA 4.1s ease-in-out infinite 0.5s;
-  z-index: 6;
-}
-
-/* ── Sugar cubes – raised 200px, in front of cup ── */
 .w-sugar {
-  bottom: calc(-2% + 200px);
-  right: -6%;
+  bottom: calc(-2% + 140px);
+  right: calc(-6% + 10px);
   width: clamp(160px, 44vw, 240px);
   image-rendering: auto;
   z-index: 4;
-  animation: floatB 5.6s ease-in-out infinite 0.2s;
 }
 
 
@@ -196,7 +177,6 @@ html, body {
    DECK SELECTION SCREEN
 ════════════════════════════════════════ */
 
-/* Vertical layout: cards + back button stacked */
 .home-content {
   display: flex;
   flex-direction: column;
@@ -208,7 +188,6 @@ html, body {
   z-index: 2;
 }
 
-/* Back button sits below the Saucy card */
 .home-back {
   font-family: var(--title);
   font-style: italic;
@@ -222,7 +201,6 @@ html, body {
 }
 .home-back:hover { transform: translateX(-2px); }
 
-/* Stars & heart – only on this page, floating */
 .h-stars {
   top: 3%; right: 2%;
   width: clamp(55px, 11vw, 88px);
@@ -236,7 +214,6 @@ html, body {
   z-index: 5;
 }
 
-/* Cards container */
 .decks-wrap {
   width: 100%;
   display: flex;
@@ -244,7 +221,6 @@ html, body {
   gap: clamp(16px, 3.5vh, 28px);
 }
 
-/* Deck card */
 .deck-btn {
   width: 100%;
   height: clamp(165px, 26vh, 220px);
@@ -283,7 +259,6 @@ html, body {
 
 .saucy-btn { background: var(--saucy-cream); }
 
-/* Deck name – Helvetica Neue, #DF93C6 for both */
 .deck-name {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(48px, 13vw, 72px);
@@ -545,7 +520,6 @@ html, body {
   .w-noway      { top: 40%; }
   .w-drop       { top: 22%; }
   .w-emoji      { top: 62%; }
-  .w-really     { top: 60%; }
   .deck-btn     { height: clamp(110px, 22vh, 150px); }
   .deck-name    { font-size: clamp(34px, 9vw, 54px); }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }

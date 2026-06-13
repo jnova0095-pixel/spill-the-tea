@@ -106,22 +106,22 @@ html, body {
   z-index: 6;
 }
 
-/* ── Drops bubble – right, 20% bigger, pushed away from cup ── */
+/* ── Drops bubble – right, 30% bigger ── */
 .w-drop {
   top: 30%;
   right: -4%;
-  width: clamp(108px, 26vw, 180px);
+  width: clamp(140px, 34vw, 234px);
   animation: floatB 3.9s ease-in-out infinite 0.7s;
   z-index: 6;
 }
 
-/* ── Cup – moved up 15% ── */
+/* ── Cup – 30% bigger, shifted down 40px ── */
 .cup-wrap {
   position: absolute;
-  top: 35%;
+  top: calc(35% + 40px);
   left: 50%;
   transform: translateX(-50%);
-  width: clamp(220px, 72vw, 340px);
+  width: clamp(286px, 94vw, 442px);
   z-index: 3;
   animation: cupBob 4.2s ease-in-out infinite;
 }
@@ -163,7 +163,7 @@ html, body {
   transform: translateX(-50%) scale(0.96);
 }
 
-/* ── Emoji bubble – lower-left, 30% bigger, pushed away from cup ── */
+/* ── Strawberry emoji – lower-left ── */
 .w-emoji {
   top: calc(70% - 100px);
   left: -4%;
@@ -172,23 +172,13 @@ html, body {
   z-index: 6;
 }
 
-/* ── "Really?!" bubble – lower-right, 20% bigger, pushed away from cup ── */
-.w-really {
-  top: 68%;
-  right: -4%;
-  width: clamp(120px, 30vw, 192px);
-  animation: floatA 4.1s ease-in-out infinite 0.5s;
-  z-index: 6;
-}
-
-/* ── Sugar cubes – next to cup, in front of it ── */
+/* ── Sugar cubes – down 30%, right 10px, static ── */
 .w-sugar {
-  bottom: calc(-2% + 200px);
-  right: -6%;
+  bottom: calc(-2% + 140px);
+  right: calc(-6% + 10px);
   width: clamp(160px, 44vw, 240px);
   image-rendering: auto;
   z-index: 4;
-  animation: floatB 5.6s ease-in-out infinite 0.2s;
 }
 
 
@@ -545,7 +535,6 @@ html, body {
   .w-noway      { top: 40%; }
   .w-drop       { top: 22%; }
   .w-emoji      { top: 62%; }
-  .w-really     { top: 60%; }
   .deck-btn     { height: clamp(110px, 22vh, 150px); }
   .deck-name    { font-size: clamp(34px, 9vw, 54px); }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }

@@ -118,7 +118,7 @@ html, body {
 /* ── Cup – 30% bigger, shifted down 40px ── */
 .cup-wrap {
   position: absolute;
-  top: calc(35% + 40px);
+  top: calc(35% + 10px);
   left: 50%;
   transform: translateX(-50%);
   width: clamp(286px, 94vw, 442px);
@@ -138,7 +138,7 @@ html, body {
 /* "play the game" – inside cup opening, Helvetica Neue */
 .play-cup-btn {
   position: absolute;
-  top: calc(14% + 50px);
+  top: calc(14% + 20px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -174,8 +174,8 @@ html, body {
 
 /* ── Sugar cubes – down 30%, right 10px, static ── */
 .w-sugar {
-  bottom: calc(-2% + 90px);
-  right: calc(-6% + 10px);
+  bottom: calc(-2% + 60px);
+  right: calc(-6% + 35px);
   width: clamp(160px, 44vw, 240px);
   image-rendering: auto;
   z-index: 4;
@@ -224,20 +224,42 @@ html, body {
 .deck-btn {
   width: 100%;
   max-width: 320px;
+  aspect-ratio: 0.68;
   background: none;
   border: none;
   padding: 0;
   display: block;
   -webkit-tap-highlight-color: transparent;
   transition: transform 0.22s cubic-bezier(.22,.68,0,1.2);
+  position: relative;
 }
+
+/* Sweet card sits slightly low in its own artwork — nudge the row down to balance the stack */
+.sweet-btn { margin-top: 50px; }
 
 .deck-card-img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: contain;
   filter: drop-shadow(0 6px 28px rgba(60,120,170,0.18));
 }
+
+/* Visible card label — top-left corner, like a playing-card pip, before the card is opened */
+.deck-label {
+  position: absolute;
+  top: 7%;
+  left: 9%;
+  font-family: var(--title);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(15px, 4.2vw, 19px);
+  letter-spacing: 0.04em;
+  color: var(--text);
+  z-index: 2;
+  pointer-events: none;
+}
+.saucy-btn .deck-label { color: #fff; }
 
 .deck-btn:hover {
   transform: translateY(-5px) scale(1.015);

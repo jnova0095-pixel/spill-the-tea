@@ -186,7 +186,18 @@ html, body {
    DECK SELECTION SCREEN
 ════════════════════════════════════════ */
 
-/* Vertical layout: cards + back button stacked */
+/* Back button – fixed top-left, like a browser tab's back arrow */
+.home-top {
+  position: fixed; top: 0; left: 0; right: 0;
+  padding: max(48px, env(safe-area-inset-top, 48px)) 24px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+  z-index: 10;
+}
+
+/* Cards centered below the top bar */
 .home-content {
   display: flex;
   flex-direction: column;
@@ -197,20 +208,6 @@ html, body {
   padding: 0 20px;
   z-index: 2;
 }
-
-/* Back button sits below the Saucy card */
-.home-back {
-  font-family: var(--title);
-  font-style: italic;
-  font-size: 17px;
-  color: rgba(255,255,255,0.9);
-  background: none;
-  border: none;
-  -webkit-tap-highlight-color: transparent;
-  transition: transform 0.15s ease;
-  align-self: center;
-}
-.home-back:hover { transform: translateX(-2px); }
 
 /* Cards container */
 .decks-wrap {
@@ -244,22 +241,6 @@ html, body {
   object-fit: contain;
   filter: drop-shadow(0 6px 28px rgba(60,120,170,0.18));
 }
-
-/* Visible card label — top-left corner, like a playing-card pip, before the card is opened */
-.deck-label {
-  position: absolute;
-  top: 7%;
-  left: 9%;
-  font-family: var(--title);
-  font-style: italic;
-  font-weight: 700;
-  font-size: clamp(15px, 4.2vw, 19px);
-  letter-spacing: 0.04em;
-  color: var(--text);
-  z-index: 2;
-  pointer-events: none;
-}
-.saucy-btn .deck-label { color: #fff; }
 
 .deck-btn:hover {
   transform: translateY(-5px) scale(1.015);

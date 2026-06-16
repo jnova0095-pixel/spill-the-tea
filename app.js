@@ -126,15 +126,24 @@ function show(id) {
   document.getElementById(id).classList.add('active');
 }
 
+const TAGLINES = {
+  sweet: 'soft confessions, served warm ✦',
+  saucy: 'spicy, no filter, no regrets ✦'
+};
+
 function startGame(m) {
   mode = m;
+  // Filter out already-answered questions
   const pool = QUESTIONS[m].filter(q => !answered[m].has(q));
+  // If all done, reset that deck
   deck = shuffle(pool.length > 0 ? pool : (answered[m].clear(), QUESTIONS[m]));
   idx = 0;
 
   const card = document.getElementById('q-card');
   card.className = 'q-card' + (m === 'saucy' ? ' saucy-q' : '');
+  document.getElementById('q-stack').classList.toggle('saucy-stack', m === 'saucy');
   document.getElementById('q-mode').textContent = m;
+  document.getElementById('q-tagline').textContent = TAGLINES[m];
   show('screen-game');
   renderCard();
 }
@@ -179,9 +188,17 @@ function markDone(e) {
   }, 380);
 }
 
-function goToDecks() { show('screen-home'); }
-function goHome()    { show('screen-home'); }
-function goWelcome() { show('screen-welcome'); }
+function goToDecks() {
+  show('screen-home');
+}
+
+function goHome() {
+  show('screen-home');
+}
+
+function goWelcome() {
+  show('screen-welcome');
+}
 
 function newSession() {
   answered.sweet.clear();
@@ -194,13 +211,13 @@ function newSession() {
   const el = document.getElementById('custom-cursor');
   if (!el) return;
 
-  const half = 39; // half of 78px cursor
+  const half = 39; // half of 78px cursor size
 
   function move(x, y) {
     el.style.transform = 'translate(' + (x - half) + 'px,' + (y - half) + 'px)';
   }
 
-  // Visible at screen centre before first interaction
+  // Show cursor at screen center on load — visible before first interaction
   move(window.innerWidth / 2, window.innerHeight / 2);
 
   document.addEventListener('mousemove',  e => move(e.clientX, e.clientY));

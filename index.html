@@ -39,10 +39,6 @@
   <!-- ── DECK SELECTION ── -->
   <div id="screen-home" class="screen">
 
-    <!-- Pixel decorations (only on this page) -->
-    <img class="deco h-stars" src="Pixel stars.png" alt="">
-    <img class="deco h-heart" src="Pixel heart.png" alt="">
-
     <div class="home-content">
       <div class="decks-wrap">
         <div class="deck-btn sweet-btn" onclick="startGame('sweet')">
@@ -65,11 +61,12 @@
     </div>
 
     <div class="game-body">
-      <div class="q-stack">
+      <div class="q-stack" id="q-stack">
         <div class="q-ghost q-ghost2"></div>
         <div class="q-ghost q-ghost1"></div>
         <div class="q-card" id="q-card" onclick="nextCard()">
           <span class="q-mode" id="q-mode"></span>
+          <p class="q-tagline" id="q-tagline"></p>
           <p class="q-text" id="q-text"></p>
           <div class="card-actions">
             <button class="done-btn" onclick="markDone(event)">✓ done</button>

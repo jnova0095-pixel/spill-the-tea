@@ -126,6 +126,11 @@ function show(id) {
   document.getElementById(id).classList.add('active');
 }
 
+const TAGLINES = {
+  sweet: 'soft confessions, served warm ✦',
+  saucy: 'spicy, no filter, no regrets ✦'
+};
+
 function startGame(m) {
   mode = m;
   // Filter out already-answered questions
@@ -136,7 +141,9 @@ function startGame(m) {
 
   const card = document.getElementById('q-card');
   card.className = 'q-card' + (m === 'saucy' ? ' saucy-q' : '');
+  document.getElementById('q-stack').classList.toggle('saucy-stack', m === 'saucy');
   document.getElementById('q-mode').textContent = m;
+  document.getElementById('q-tagline').textContent = TAGLINES[m];
   show('screen-game');
   renderCard();
 }

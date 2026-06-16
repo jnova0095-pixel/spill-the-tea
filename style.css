@@ -81,13 +81,13 @@ html, body {
 /* ── Title – centered ── */
 .splash-title {
   position: absolute;
-  top: 8%;
+  top: calc(8% + 50px);
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   white-space: nowrap;
   font-family: var(--title);
-  font-size: clamp(72px, 19vw, 124px);
+  font-size: clamp(83px, 21.85vw, 143px);
   font-weight: 700;
   font-style: italic;
   line-height: 0.88;
@@ -110,7 +110,7 @@ html, body {
 .w-drop {
   top: 30%;
   right: -4%;
-  width: clamp(140px, 34vw, 234px);
+  width: clamp(182px, 44vw, 304px);
   animation: floatB 3.9s ease-in-out infinite 0.7s;
   z-index: 6;
 }
@@ -138,7 +138,7 @@ html, body {
 /* "play the game" – inside cup opening, Helvetica Neue */
 .play-cup-btn {
   position: absolute;
-  top: 14%;
+  top: calc(14% + 50px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -167,14 +167,14 @@ html, body {
 .w-emoji {
   top: calc(70% - 100px);
   left: -4%;
-  width: clamp(125px, 31vw, 203px);
+  width: clamp(150px, 37vw, 244px);
   animation: floatC 4.8s ease-in-out infinite 1s;
   z-index: 6;
 }
 
 /* ── Sugar cubes – down 30%, right 10px, static ── */
 .w-sugar {
-  bottom: calc(-2% + 140px);
+  bottom: calc(-2% + 90px);
   right: calc(-6% + 10px);
   width: clamp(160px, 44vw, 240px);
   image-rendering: auto;
@@ -211,20 +211,6 @@ html, body {
   align-self: center;
 }
 .home-back:hover { transform: translateX(-2px); }
-
-/* Stars & heart – only on this page, floating */
-.h-stars {
-  top: 3%; right: 2%;
-  width: clamp(55px, 11vw, 88px);
-  animation: floatC 5.2s ease-in-out infinite;
-  z-index: 5;
-}
-.h-heart {
-  bottom: 4%; left: -2%;
-  width: clamp(103px, 23vw, 156px);
-  animation: floatB 5.4s ease-in-out infinite;
-  z-index: 5;
-}
 
 /* Cards container */
 .decks-wrap {
@@ -331,17 +317,21 @@ html, body {
 
 .q-ghost {
   position: absolute; inset: 0;
+  width: 100%;
+  min-height: clamp(360px, 55vh, 460px);
   border-radius: var(--r);
   background: var(--cream);
 }
-.q-ghost1 { transform: rotate(2deg) translateY(6px);     opacity: 0.55; }
-.q-ghost2 { transform: rotate(-1.5deg) translateY(11px); opacity: 0.3; }
+.q-ghost1 { background: var(--cream) url('Sweet card.png') center / cover no-repeat; transform: rotate(2deg) translateY(6px);     opacity: 0.55; }
+.q-ghost2 { background: var(--cream) url('Sweet card.png') center / cover no-repeat; transform: rotate(-1.5deg) translateY(11px); opacity: 0.3; }
+.q-stack.saucy-stack .q-ghost1,
+.q-stack.saucy-stack .q-ghost2 { background-image: url('Saucy card.png'); }
 
 .q-card {
   position: relative; z-index: 3;
   width: 100%;
   min-height: clamp(360px, 55vh, 460px);
-  background: var(--cream);
+  background: var(--cream) url('Sweet card.png') center / cover no-repeat;
   border-radius: var(--r);
   box-shadow: 0 16px 48px rgba(60,120,170,0.18), 0 3px 10px rgba(60,120,170,0.10);
   -webkit-tap-highlight-color: transparent;
@@ -351,6 +341,16 @@ html, body {
   user-select: none;
   transition: transform 0.15s ease;
   overflow: hidden;
+}
+.q-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: var(--r);
+  background: linear-gradient(to top, rgba(254,248,240,0.92) 0%, rgba(254,248,240,0.75) 45%, rgba(254,248,240,0.45) 100%);
+  pointer-events: none;
+}
+.q-card.saucy-q::before {
+  background: linear-gradient(to top, rgba(248,240,251,0.92) 0%, rgba(248,240,251,0.75) 45%, rgba(248,240,251,0.45) 100%);
 }
 .q-card::after {
   content: '';
@@ -362,8 +362,11 @@ html, body {
   mix-blend-mode: multiply;
 }
 .q-card:active { transform: scale(0.975); }
-.q-card.saucy-q { background: var(--saucy-cream); }
+.q-card.saucy-q { background: var(--saucy-cream) url('Saucy card.png') center / cover no-repeat; }
 
+.q-mode, .q-tagline {
+  position: relative; z-index: 1;
+}
 .q-mode {
   font-family: var(--body);
   font-size: 10px; letter-spacing: 0.18em;
@@ -372,7 +375,16 @@ html, body {
 }
 .q-card.saucy-q .q-mode { color: var(--saucy-accent); }
 
+.q-tagline {
+  font-family: var(--title);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--mid);
+  margin-top: -14px;
+}
+
 .q-text {
+  position: relative; z-index: 1;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: clamp(18px, 4.5vw, 22px);
   font-weight: 300; line-height: 1.55;

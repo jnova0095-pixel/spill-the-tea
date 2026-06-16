@@ -220,12 +220,13 @@ html, body {
   gap: clamp(16px, 3.5vh, 28px);
 }
 
-/* Deck card – shows the actual Sweet/Saucy card art as its cover */
+/* Deck card – full playing-card art, like the reference mockup */
 .deck-btn {
   width: 100%;
-  height: clamp(165px, 26vh, 220px);
+  aspect-ratio: 0.72;
+  max-height: 42vh;
   background: var(--cream) url('Sweet card.png') center / cover no-repeat;
-  border-radius: 18px;
+  border-radius: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -248,20 +249,13 @@ html, body {
 
 .saucy-btn { background: var(--saucy-cream) url('Saucy card.png') center / cover no-repeat; }
 
-/* Deck name – overlaid on the card art */
+/* Deck name – kept for accessibility, hidden visually since the card art carries the label */
 .deck-name {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: clamp(48px, 13vw, 72px);
-  font-weight: 300;
-  color: #fff;
-  line-height: 1;
-  letter-spacing: -0.02em;
-  position: relative;
-  z-index: 1;
-  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
-  transition: transform 0.2s ease;
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
-.deck-btn:hover .deck-name { transform: scale(1.04); }
 
 
 /* ════════════════════════════════════════
@@ -511,8 +505,7 @@ html, body {
 
 @media (min-width: 768px) {
   .home-content { max-width: 580px; padding: 0 32px; }
-  .deck-btn     { height: clamp(190px, 28vh, 260px); border-radius: 22px; }
-  .deck-name    { font-size: clamp(54px, 8vw, 80px); }
+  .deck-btn     { max-height: 46vh; border-radius: 28px; }
   .game-body    { max-width: 560px; }
   .q-card       { min-height: clamp(400px, 52vh, 500px); }
   .q-text       { font-size: clamp(20px, 2.4vw, 26px); }
@@ -527,7 +520,6 @@ html, body {
   .w-noway      { top: 40%; }
   .w-drop       { top: 22%; }
   .w-emoji      { top: 62%; }
-  .deck-btn     { height: clamp(110px, 22vh, 150px); }
-  .deck-name    { font-size: clamp(34px, 9vw, 54px); }
+  .deck-btn     { max-height: 32vh; }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }
 }

@@ -220,7 +220,7 @@ html, body {
 
 /* Deck card */
 .deck-btn {
-  width: clamp(240px, 66vw, 390px);
+  width: clamp(312px, 86vw, 507px);
   aspect-ratio: 0.68;
   background: none;
   border: none;
@@ -518,7 +518,7 @@ html, body {
     align-items: flex-end;
     gap: clamp(40px, 6vw, 80px);
   }
-  .deck-btn       { width: clamp(260px, 31vw, 400px); }
+  .deck-btn       { width: clamp(338px, 40vw, 520px); }
 
   /* Game */
   .game-body      { max-width: 580px; }
@@ -543,7 +543,7 @@ html, body {
   /* Deck — bigger cards, tighter centered gap */
   .home-content   { padding: 80px 60px 60px; }
   .decks-wrap     { gap: clamp(48px, 5vw, 80px); }
-  .deck-btn       { width: clamp(310px, 26vw, 442px); }
+  .deck-btn       { width: clamp(403px, 34vw, 575px); }
 
   /* Game */
   .game-body      { max-width: 640px; }
@@ -559,7 +559,7 @@ html, body {
   .welcome-inner  { max-width: 760px; }
   .splash-title   { font-size: 148px; }
   .cup-wrap       { width: 520px; }
-  .deck-btn       { width: 480px; }
+  .deck-btn       { width: 624px; }
   .game-body      { max-width: 700px; }
 }
 
@@ -574,7 +574,7 @@ html, body {
   .w-drop       { top: 22%; }
   .w-emoji      { top: 62%; }
   .decks-wrap   { flex-direction: row; gap: 20px; }
-  .deck-btn     { width: clamp(130px, 28vw, 200px); }
+  .deck-btn     { width: clamp(169px, 36vw, 260px); }
   .sweet-btn    { top: 30px; }
   .saucy-btn    { top: -30px; }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }

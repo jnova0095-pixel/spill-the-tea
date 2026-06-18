@@ -197,30 +197,30 @@ html, body {
   z-index: 10;
 }
 
-/* Cards centered below the top bar */
+/* Cards — vertically centered, two cards stacked with spacing */
 .home-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  justify-content: center;
   width: 100%;
-  max-width: 480px;
-  padding: 0 20px;
+  height: 100%;
+  padding: 80px 20px 32px;
   z-index: 2;
 }
 
-/* Cards container */
+/* Cards container — centered stack */
 .decks-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: clamp(16px, 3.5vh, 28px);
+  align-items: center;
+  gap: clamp(20px, 4vh, 36px);
 }
 
-/* Deck card – the Sweet/Saucy artwork itself is the card, no extra backdrop */
+/* Deck card */
 .deck-btn {
-  width: 100%;
-  max-width: 320px;
+  width: clamp(160px, 44vw, 260px);
   aspect-ratio: 0.68;
   background: none;
   border: none;
@@ -231,15 +231,12 @@ html, body {
   position: relative;
 }
 
-/* Sweet card sits slightly low in its own artwork — nudge the row down to balance the stack */
-.sweet-btn { margin-top: 50px; }
-
 .deck-card-img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 6px 28px rgba(60,120,170,0.18));
+  filter: drop-shadow(0 8px 32px rgba(40,80,140,0.22));
 }
 
 .deck-btn:hover {
@@ -254,13 +251,17 @@ html, body {
    GAME SCREEN
 ════════════════════════════════════════ */
 
+#screen-game {
+  background: url('Towel.png') center/cover no-repeat;
+}
+
 .game-top {
   position: fixed; top: 0; left: 0; right: 0;
   padding: max(48px, env(safe-area-inset-top, 48px)) 24px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(to bottom, var(--bg) 60%, transparent);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, transparent 100%);
   z-index: 10;
 }
 
@@ -496,8 +497,7 @@ html, body {
 ════════════════════════════════════════ */
 
 @media (min-width: 768px) {
-  .home-content { max-width: 580px; padding: 0 32px; }
-  .deck-btn     { max-width: 360px; }
+  .deck-btn     { width: clamp(200px, 28vw, 300px); }
   .game-body    { max-width: 560px; }
   .q-card       { min-height: clamp(400px, 52vh, 500px); }
   .q-text       { font-size: clamp(20px, 2.4vw, 26px); }
@@ -512,6 +512,6 @@ html, body {
   .w-noway      { top: 40%; }
   .w-drop       { top: 22%; }
   .w-emoji      { top: 62%; }
-  .deck-btn     { max-width: 220px; }
+  .deck-btn     { width: clamp(120px, 30vw, 180px); }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }
 }

@@ -510,15 +510,15 @@ html, body {
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
   .w-sugar        { width: clamp(180px, 36vw, 250px); }
 
-  /* Deck — side by side, stagger preserved via .sweet-btn/.saucy-btn top offsets */
+  /* Deck — side by side, aligned at bottom so the stagger reads as intentional */
   .home-content   { padding: 80px 40px 40px; }
   .decks-wrap     {
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    gap: clamp(32px, 5vw, 64px);
+    align-items: flex-end;
+    gap: clamp(40px, 6vw, 80px);
   }
-  .deck-btn       { width: clamp(200px, 24vw, 310px); }
+  .deck-btn       { width: clamp(260px, 31vw, 400px); }
 
   /* Game */
   .game-body      { max-width: 580px; }
@@ -540,8 +540,10 @@ html, body {
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
   .w-sugar        { width: clamp(190px, 14vw, 250px); }
 
-  /* Deck */
-  .deck-btn       { width: clamp(240px, 20vw, 340px); }
+  /* Deck — bigger cards, tighter centered gap */
+  .home-content   { padding: 80px 60px 60px; }
+  .decks-wrap     { gap: clamp(48px, 5vw, 80px); }
+  .deck-btn       { width: clamp(310px, 26vw, 442px); }
 
   /* Game */
   .game-body      { max-width: 640px; }
@@ -557,7 +559,7 @@ html, body {
   .welcome-inner  { max-width: 760px; }
   .splash-title   { font-size: 148px; }
   .cup-wrap       { width: 520px; }
-  .deck-btn       { width: 360px; }
+  .deck-btn       { width: 480px; }
   .game-body      { max-width: 700px; }
 }
 

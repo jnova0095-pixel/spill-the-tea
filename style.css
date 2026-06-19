@@ -186,21 +186,22 @@ html, body {
    DECK SELECTION SCREEN
 ════════════════════════════════════════ */
 
-/* Crochet side decorations */
+/* Crochet side decorations – hidden by default, shown only on deck screen */
 .crochet-left,
 .crochet-right {
-  position: absolute;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  height: 100%;
+  height: 100vh;
   width: auto;
   pointer-events: none;
   user-select: none;
   z-index: 1;
-  object-fit: cover;
+  display: none;
 }
 .crochet-left  { left: 0; }
 .crochet-right { right: 0; }
+#screen-home.active .crochet-left,
+#screen-home.active .crochet-right { display: block; }
 
 /* Back button – fixed top-left, like a browser tab's back arrow */
 .home-top {
@@ -248,8 +249,8 @@ html, body {
 }
 
 /* Stagger: Honeypot down, Dirty Chai up */
-.sweet-btn { top:  150px; }
-.saucy-btn { top: -140px; }
+.sweet-btn { top:  120px; }
+.saucy-btn { top: -100px; }
 
 .deck-card-img {
   width: 100%;

@@ -232,8 +232,8 @@ html, body {
 }
 
 /* Stagger: Honeypot down, Dirty Chai up */
-.sweet-btn { top:  60px; }
-.saucy-btn { top: -60px; }
+.sweet-btn { top:  80px; }
+.saucy-btn { top: -80px; }
 
 .deck-card-img {
   width: 100%;

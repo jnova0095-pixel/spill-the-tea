@@ -176,7 +176,7 @@ html, body {
 .w-sugar {
   bottom: calc(-2% + 60px);
   right: calc(-6% + 35px);
-  width: clamp(160px, 44vw, 240px);
+  width: clamp(320px, 88vw, 480px);
   image-rendering: auto;
   z-index: 4;
 }
@@ -508,7 +508,7 @@ html, body {
   .w-noway        { width: clamp(150px, 30vw, 220px); }
   .w-drop         { width: clamp(200px, 36vw, 280px); }
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
-  .w-sugar        { width: clamp(180px, 36vw, 250px); }
+  .w-sugar        { width: clamp(360px, 72vw, 500px); }
 
   /* Deck — side by side, aligned at bottom so the stagger reads as intentional */
   .home-content   { padding: 80px 40px 40px; }
@@ -538,7 +538,7 @@ html, body {
   .w-noway        { width: clamp(160px, 14vw, 220px); left: -4%; }
   .w-drop         { width: clamp(210px, 18vw, 290px); right: -3%; }
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
-  .w-sugar        { width: clamp(190px, 14vw, 250px); }
+  .w-sugar        { width: clamp(380px, 28vw, 500px); }
 
   /* Deck — bigger cards, tighter centered gap */
   .home-content   { padding: 80px 60px 60px; }

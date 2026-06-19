@@ -131,7 +131,7 @@ html, body {
 
 .play-cup-btn {
   position: absolute;
-  top: calc(14% + 20px);
+  top: calc(14% + 50px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -165,8 +165,8 @@ html, body {
 }
 
 .w-sugar {
-  bottom: calc(-2% + 60px);
-  right: calc(-6% + 35px);
+  bottom: calc(-2% - 10px);
+  right: calc(-6% - 25px);
   width: clamp(320px, 88vw, 480px);
   image-rendering: auto;
   z-index: 4;

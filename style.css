@@ -150,7 +150,7 @@ html, body {
 }
 .play-cup-btn:hover {
   transform: translateX(-50%) scale(1.1);
-  color: #c01a09 !important;
+  color: #c01a09;
 }
 .play-cup-btn:active {
   transform: translateX(-50%) scale(0.96);
@@ -220,7 +220,7 @@ html, body {
 
 /* Stagger: Honeypot down, Dirty Chai up */
 .sweet-btn { top:  210px; }
-.saucy-btn { top: -180px; }
+.saucy-btn { top: -150px; }
 
 .deck-card-img {
   width: 100%;

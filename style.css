@@ -146,14 +146,14 @@ html, body {
   font-style: italic;
   font-size: clamp(18px, 5.5vw, 28px);
   font-weight: 700;
-  color: #ec210c;
+  color: #ec210c !important;
   background: none;
   border: none;
   letter-spacing: 0.02em;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-  transition: transform 0.18s ease, color 0.18s ease;
-  text-shadow: 0 1px 6px rgba(255,255,255,0.6);
+  transition: transform 0.18s ease;
+  text-shadow: none;
 }
 .play-cup-btn:hover {
   transform: translateX(-50%) scale(1.1);
@@ -232,8 +232,8 @@ html, body {
 }
 
 /* Stagger: Honeypot down, Dirty Chai up */
-.sweet-btn { top:  130px; }
-.saucy-btn { top: -130px; }
+.sweet-btn { top:  210px; }
+.saucy-btn { top: -180px; }
 
 .deck-card-img {
   width: 100%;

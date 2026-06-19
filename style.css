@@ -232,8 +232,8 @@ html, body {
 }
 
 /* Stagger: Honeypot down, Dirty Chai up */
-.sweet-btn { top:  50px; }
-.saucy-btn { top: -50px; }
+.sweet-btn { top:  60px; }
+.saucy-btn { top: -60px; }
 
 .deck-card-img {
   width: 100%;
@@ -575,7 +575,7 @@ html, body {
   .w-emoji      { top: 62%; }
   .decks-wrap   { flex-direction: row; gap: 20px; }
   .deck-btn     { width: clamp(169px, 36vw, 260px); }
-  .sweet-btn    { top: 30px; }
-  .saucy-btn    { top: -30px; }
+  .sweet-btn    { top: 40px; }
+  .saucy-btn    { top: -40px; }
   .q-card       { min-height: clamp(260px, 58vh, 340px); padding: 24px 22px 20px; }
 }

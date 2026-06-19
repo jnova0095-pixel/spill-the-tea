@@ -135,29 +135,31 @@ html, body {
   animation: cupWobble 0.55s ease-in-out forwards;
 }
 
-/* "play the game" – inside cup opening, Helvetica Neue */
+/* "play the game" – pill button, sits between title and cup */
 .play-cup-btn {
   position: absolute;
-  top: calc(14% + 50px);
+  top: calc(14% + 15px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-size: clamp(18px, 5.5vw, 28px);
-  font-weight: 700;
-  color: #ec210c !important;
-  background: none;
-  border: none;
-  letter-spacing: 0.02em;
+  font-style: normal;
+  font-size: clamp(12px, 3.2vw, 15px);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(236, 33, 12, 0.6);
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(236, 33, 12, 0.22);
+  border-radius: 50px;
+  padding: 10px 26px;
   white-space: nowrap;
   -webkit-tap-highlight-color: transparent;
-  transition: transform 0.18s ease;
+  transition: transform 0.18s ease, background 0.15s ease;
   text-shadow: none;
 }
 .play-cup-btn:hover {
-  transform: translateX(-50%) scale(1.1);
-  color: #c01a09;
+  transform: translateX(-50%) scale(1.05);
+  background: rgba(255, 255, 255, 0.42);
 }
 .play-cup-btn:active {
   transform: translateX(-50%) scale(0.96);
@@ -193,6 +195,9 @@ html, body {
   top: 0;
   height: 100vh;
   width: auto;
+  max-width: 28vw;
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
   user-select: none;
   z-index: 1;
@@ -527,6 +532,10 @@ html, body {
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
   .w-sugar        { width: clamp(360px, 72vw, 500px); }
 
+  /* Crochet */
+  .crochet-left,
+  .crochet-right  { max-width: 18vw; }
+
   /* Deck — side by side, aligned at bottom so the stagger reads as intentional */
   .home-content   { padding: 80px 40px 40px; }
   .decks-wrap     {
@@ -557,6 +566,10 @@ html, body {
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
   .w-sugar        { width: clamp(380px, 28vw, 500px); }
 
+  /* Crochet */
+  .crochet-left,
+  .crochet-right  { max-width: 14vw; }
+
   /* Deck — bigger cards, tighter centered gap */
   .home-content   { padding: 80px 60px 60px; }
   .decks-wrap     { gap: clamp(48px, 5vw, 80px); }
@@ -578,6 +591,8 @@ html, body {
   .cup-wrap       { width: 520px; }
   .deck-btn       { width: 624px; }
   .game-body      { max-width: 700px; }
+  .crochet-left,
+  .crochet-right  { max-width: 11vw; }
 }
 
 /* ════════════════════════════════════════

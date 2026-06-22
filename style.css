@@ -109,7 +109,7 @@ html, body {
 /* ── Drops bubble – right, 30% bigger ── */
 .w-drop {
   top: calc(30% + 60px);
-  right: calc(-4% - 20px);
+  right: -4%;
   width: clamp(146px, 35vw, 243px);
   animation: floatB 3.9s ease-in-out infinite 0.7s;
   z-index: 6;

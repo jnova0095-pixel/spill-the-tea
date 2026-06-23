@@ -118,7 +118,7 @@ html, body {
 /* ── Cup – 30% bigger, shifted down 40px ── */
 .cup-wrap {
   position: absolute;
-  top: calc(35% + 10px);
+  top: calc(42% + 10px);
   left: 50%;
   transform: translateX(-50%);
   width: clamp(286px, 94vw, 442px);
@@ -138,7 +138,7 @@ html, body {
 /* "play the game" – pill button, sits between title and cup */
 .play-cup-btn {
   position: absolute;
-  top: calc(33% - 20px);
+  top: calc(37% - 10px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
@@ -526,12 +526,12 @@ html, body {
   /* Welcome — slightly wider container, bigger decorations */
   .welcome-inner  { max-width: 580px; }
   .splash-title   { font-size: clamp(80px, 13vw, 120px); top: calc(6% + 40px); }
-  .cup-wrap       { width: clamp(300px, 58vw, 460px); top: calc(33% + 10px); }
+  .cup-wrap       { width: clamp(300px, 58vw, 460px); top: calc(40% + 10px); }
   .w-noway        { width: clamp(150px, 30vw, 220px); }
   .w-drop         { width: clamp(200px, 36vw, 280px); }
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
   .w-sugar        { width: clamp(360px, 72vw, 500px); }
-  .play-cup-btn   { top: calc(30% - 15px); }
+  .play-cup-btn   { top: calc(36% - 10px); }
 
   /* Crochet */
   .crochet-left,
@@ -561,12 +561,12 @@ html, body {
   /* Welcome — give the container more room */
   .welcome-inner  { max-width: 680px; }
   .splash-title   { font-size: clamp(100px, 10vw, 140px); top: calc(5% + 30px); }
-  .cup-wrap       { width: clamp(340px, 46vw, 500px); top: 32%; }
+  .cup-wrap       { width: clamp(340px, 46vw, 500px); top: 42%; }
   .w-noway        { width: clamp(160px, 14vw, 220px); left: -4%; }
   .w-drop         { width: clamp(210px, 18vw, 290px); right: -3%; }
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
   .w-sugar        { width: clamp(380px, 28vw, 500px); }
-  .play-cup-btn   { top: calc(29% - 15px); }
+  .play-cup-btn   { top: calc(36% - 10px); }
 
   /* Crochet */
   .crochet-left,

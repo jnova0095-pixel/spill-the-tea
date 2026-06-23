@@ -138,7 +138,7 @@ html, body {
 /* "play the game" – pill button, sits between title and cup */
 .play-cup-btn {
   position: absolute;
-  top: calc(14% - 15px);
+  top: calc(33% - 20px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
@@ -531,7 +531,7 @@ html, body {
   .w-drop         { width: clamp(200px, 36vw, 280px); }
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
   .w-sugar        { width: clamp(360px, 72vw, 500px); }
-  .play-cup-btn   { top: calc(29% - 15px); }
+  .play-cup-btn   { top: calc(30% - 15px); }
 
   /* Crochet */
   .crochet-left,
@@ -566,7 +566,7 @@ html, body {
   .w-drop         { width: clamp(210px, 18vw, 290px); right: -3%; }
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
   .w-sugar        { width: clamp(380px, 28vw, 500px); }
-  .play-cup-btn   { top: calc(30% - 15px); }
+  .play-cup-btn   { top: calc(29% - 15px); }
 
   /* Crochet */
   .crochet-left,

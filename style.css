@@ -141,7 +141,7 @@ html, body {
   top: calc(14% - 15px);
   left: 50%;
   transform: translateX(-50%);
-  z-index: 4;
+  z-index: 5;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: normal;
   font-size: clamp(12px, 3.2vw, 15px);
@@ -531,6 +531,7 @@ html, body {
   .w-drop         { width: clamp(200px, 36vw, 280px); }
   .w-emoji        { width: clamp(160px, 30vw, 220px); }
   .w-sugar        { width: clamp(360px, 72vw, 500px); }
+  .play-cup-btn   { top: calc(38% - 15px); }
 
   /* Crochet */
   .crochet-left,
@@ -565,6 +566,7 @@ html, body {
   .w-drop         { width: clamp(210px, 18vw, 290px); right: -3%; }
   .w-emoji        { width: clamp(170px, 14vw, 230px); }
   .w-sugar        { width: clamp(380px, 28vw, 500px); }
+  .play-cup-btn   { top: calc(44% - 15px); }
 
   /* Crochet */
   .crochet-left,

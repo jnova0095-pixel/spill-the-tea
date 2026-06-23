@@ -138,7 +138,7 @@ html, body {
 /* "play the game" – pill button, sits between title and cup */
 .play-cup-btn {
   position: absolute;
-  top: calc(37% + 20px);
+  top: calc(37% + 50px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
